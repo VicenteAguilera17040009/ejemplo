@@ -5,8 +5,6 @@
  */
 package ejemplo;
 
-import ejemplo.chat_encriptado.CifradoCesar;
-
 /**
  *
  * @author zneo1

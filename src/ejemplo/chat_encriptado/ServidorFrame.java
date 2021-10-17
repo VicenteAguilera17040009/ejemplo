@@ -1,5 +1,7 @@
 package ejemplo.chat_encriptado;
 
+import ejemplo.chat_encriptado.cifradocesar.CifradoCesar;
+
 import java.util.Observable;
 import java.util.Observer;
 public class ServidorFrame  extends javax.swing.JFrame implements Observer {
