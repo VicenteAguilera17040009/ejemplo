@@ -1,9 +1,6 @@
 package ejemplo.chat_encriptado;
 
 
-
-import ejemplo.chat_encriptado.cifradocesar.CifradoCesar;
-
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
