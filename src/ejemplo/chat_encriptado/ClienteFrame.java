@@ -1,6 +1,7 @@
 package ejemplo.chat_encriptado;
 
 import ejemplo.chat_encriptado.cifradocesar.CifradoCesar;
+import ejemplo.chat_encriptado.cifradocesar.CodificacionXOR;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -72,8 +73,9 @@ public class ClienteFrame extends javax.swing.JFrame implements Observer {
         String mensaje = "1: " + this.txtTextoEnviar.getText() + "\n";
 
         this.txtTexto.append(mensaje);
+        Cliente c = new Cliente(6000, new String(CodificacionXOR.XOR(mensaje)));
 
-        Cliente c = new Cliente(6000, CifradoCesar.cifradoCesar(mensaje,5));
+        //Cliente c = new Cliente(6000, CifradoCesar.cifradoCesar(mensaje,5));
         Thread t = new Thread(c);
         t.start();
 
@@ -83,7 +85,8 @@ public class ClienteFrame extends javax.swing.JFrame implements Observer {
     @Override
     public void update(Observable o, Object arg) {
 
-        this.txtTexto.append(arg+ CifradoCesar.descifradoCesar((String)arg,5));
+        this.txtTexto.append(arg+ new String(CodificacionXOR.XOR((String)arg)));
+        //this.txtTexto.append(arg+ CifradoCesar.descifradoCesar((String)arg,5));
     }
 
     public static void main(String args[]) {
