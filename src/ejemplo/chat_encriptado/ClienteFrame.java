@@ -80,6 +80,8 @@ public class ClienteFrame extends javax.swing.JFrame implements Observer {
         t.start();
 
 
+
+
     }
 
     @Override
